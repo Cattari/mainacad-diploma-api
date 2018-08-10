@@ -4,7 +4,8 @@ const {
   getProjectTasks,
   changeTask,
   getTask,
-  addTask
+  addTask,
+  removeTask
 } = require('../model.js');
 
 module.exports = app => {
@@ -39,7 +40,7 @@ module.exports = app => {
   app.delete('/tasks/:id', (req, res) => {
     const { id } = req.params;
 
-    deleteTask(task);
+    removeTask(id);
     res.status(200).send({ status: 'success'});
   });
 }

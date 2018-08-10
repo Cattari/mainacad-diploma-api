@@ -103,6 +103,11 @@ exports.addTask = task => db
   .write()
   .value();
 
+exports.removeTask = id => db
+  .get('tasks')
+  .remove({ id })
+  .write();
+
 exports.getEmployeeProjects = employeeId => db
   .get('projects')
   .filter(project => project.employees.includes(employeeId))
