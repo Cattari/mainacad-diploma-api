@@ -63,8 +63,7 @@ exports.changeProject = project => db
 exports.addProject = project => db
   .get('projects')
   .post(project)
-  .write()
-  .value();
+  .write();
 
 exports.removeProject = id => db
   .get('projects')
@@ -100,8 +99,7 @@ exports.getTask = id => db
 exports.addTask = task => db
   .get('tasks')
   .post(task)
-  .write()
-  .value();
+  .write();
 
 exports.removeTask = id => db
   .get('tasks')
